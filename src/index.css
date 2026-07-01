@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: system-ui, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+#root { width: 100%; min-height: 100vh; }
+
+/* スライドオーバーアニメーション */
+.slide-over-enter { transform: translateX(100%); }
+.slide-over-enter-active { transform: translateX(0); transition: transform 300ms ease-out; }
