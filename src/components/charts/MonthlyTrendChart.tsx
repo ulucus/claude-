@@ -12,9 +12,9 @@ export default function MonthlyTrendChart({ prospects }: { prospects: Prospect[]
     .map(([month, 新規件数]) => ({ month: month.replace('-', '/'), 新規件数 }));
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 border border-slate-100">
-      <h3 className="text-sm font-bold text-slate-600 mb-1">月別新規獲得推移</h3>
-      <p className="text-xs text-slate-400 mb-3">離脱を除く新規登録件数の推移</p>
+    <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
+      <h3 className="text-sm font-bold text-slate-700 mb-0.5">月別新規獲得推移</h3>
+      <p className="text-xs text-slate-400 mb-4">離脱を除く新規登録件数の推移</p>
       <ResponsiveContainer width="100%" height={220}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />

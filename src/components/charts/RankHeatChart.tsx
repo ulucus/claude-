@@ -12,9 +12,9 @@ export default function RankHeatChart({ prospects }: { prospects: Prospect[] }) 
   const barColor = (avg: number) => avg >= 60 ? '#f43f5e' : avg >= 45 ? '#fb923c' : avg >= 30 ? '#38bdf8' : '#cbd5e1';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 border border-slate-100">
-      <h3 className="text-sm font-bold text-slate-600 mb-1">偏差値ランク × 平均熱量スコア</h3>
-      <p className="text-xs text-slate-400 mb-3">Sランクで熱量が低い = アプローチ不足の示唆</p>
+    <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
+      <h3 className="text-sm font-bold text-slate-700 mb-0.5">偏差値ランク × 平均熱量スコア</h3>
+      <p className="text-xs text-slate-400 mb-4">Sランクで熱量が低い = アプローチ不足の示唆</p>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data}>
           <XAxis dataKey="rank" tick={{ fontSize: 11 }} />

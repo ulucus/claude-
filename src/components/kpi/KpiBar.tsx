@@ -23,7 +23,7 @@ export default function KpiBar({ prospects, goal, onDupeFilter, onEditGoal }: Pr
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-bold text-slate-600">募集進捗サマリー</h2>
+        <h2 className="text-base font-bold text-slate-800">募集進捗サマリー</h2>
         <button onClick={onEditGoal} className="text-xs text-indigo-500 hover:underline flex items-center gap-1">
           <Target size={12} /> 目標を編集
         </button>

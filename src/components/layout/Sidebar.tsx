@@ -18,15 +18,15 @@ export default function Sidebar({ active, onChange }: Props) {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-52 bg-white border-r border-slate-200 min-h-0 pt-4">
-        <nav className="flex flex-col gap-1 px-2">
+      <aside className="hidden md:flex flex-col w-56 bg-white border-r border-slate-100 min-h-0 pt-5" style={{ boxShadow: '1px 0 0 #f1f5f9' }}>
+        <nav className="flex flex-col gap-0.5 px-3">
           {items.map(item => (
             <button key={item.id} onClick={() => onChange(item.id)}
               className={clsx(
-                'flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors w-full text-left',
+                'flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-150 w-full text-left',
                 active === item.id
-                  ? 'bg-indigo-50 text-indigo-700'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-indigo-600 text-white shadow-sm'
+                  : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'
               )}>
               {item.icon}
               {item.label}

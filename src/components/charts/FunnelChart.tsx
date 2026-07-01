@@ -13,8 +13,9 @@ export default function FunnelChart({ prospects }: { prospects: Prospect[] }) {
   });
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 border border-slate-100">
-      <h3 className="text-sm font-bold text-slate-600 mb-3">進捗ファネル</h3>
+    <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
+      <h3 className="text-sm font-bold text-slate-700 mb-0.5">進捗ファネル</h3>
+      <p className="text-xs text-slate-400 mb-4">各ステージの件数と前段階からの転換率</p>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} layout="vertical" margin={{ left: 8, right: 48 }}>
           <XAxis type="number" tick={{ fontSize: 11 }} />

@@ -115,7 +115,7 @@ export default function ProspectTable({ prospects, filter, onFilterChange, onSel
   const end = Math.min((pageIndex + 1) * pageSize, filtered.length);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-100">
+    <div className="bg-white rounded-2xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-slate-100">
       <FilterBar filter={filter} onChange={onFilterChange} onCsvExport={handleCsv}
         filteredCount={filtered.length} totalCount={prospects.length} />
 
@@ -143,9 +143,9 @@ export default function ProspectTable({ prospects, filter, onFilterChange, onSel
         <table className="w-full text-sm">
           <thead>
             {table.getHeaderGroups().map(hg => (
-              <tr key={hg.id} className="border-b border-slate-100 bg-slate-50">
+              <tr key={hg.id} className="border-b border-slate-100 bg-slate-50/80">
                 {hg.headers.map(h => (
-                  <th key={h.id} className="text-left px-3 py-2.5 text-xs font-medium text-slate-500 whitespace-nowrap">
+                  <th key={h.id} className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide whitespace-nowrap">
                     {h.column.getCanSort() ? (
                       <button onClick={h.column.getToggleSortingHandler()} className="flex items-center gap-1 hover:text-slate-800">
                         {flexRender(h.column.columnDef.header, h.getContext())}
@@ -169,7 +169,7 @@ export default function ProspectTable({ prospects, filter, onFilterChange, onSel
                     isSel && 'bg-indigo-50/60',
                   )}>
                   {row.getVisibleCells().map(cell => (
-                    <td key={cell.id} className="px-3 py-2.5 text-slate-700 whitespace-nowrap">
+                    <td key={cell.id} className="px-3 py-3 text-slate-700 whitespace-nowrap">
                       {cell.column.id === 'select' ? (
                         <input type="checkbox" className="w-3.5 h-3.5 accent-indigo-600"
                           checked={isSel}

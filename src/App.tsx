@@ -58,7 +58,7 @@ export default function App() {
       <div className="flex flex-1 overflow-hidden">
         <Sidebar active={tab} onChange={setTab} />
 
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 pb-20 md:pb-6 space-y-6">
+        <main className="flex-1 overflow-y-auto p-4 md:p-8 pb-20 md:pb-8 space-y-6">
 
           {(tab === 'dashboard' || tab === 'list') && (
             <KpiBar prospects={prospects} goal={goal}
@@ -67,17 +67,20 @@ export default function App() {
           )}
 
           {tab === 'dashboard' && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <>
+            <h2 className="text-base font-bold text-slate-800 -mb-2">チャート分析</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <FunnelChart prospects={prospects} />
               <SourceConversionChart prospects={prospects} />
               <RankHeatChart prospects={prospects} />
               <MonthlyTrendChart prospects={prospects} />
             </div>
+            </>
           )}
 
           {tab === 'list' && (
             <div>
-              <h2 className="text-sm font-bold text-slate-600 mb-3">ハウスリスト一覧</h2>
+              <h2 className="text-base font-bold text-slate-800 mb-4">ハウスリスト一覧</h2>
               <ProspectTable
                 prospects={prospects}
                 filter={filter}
